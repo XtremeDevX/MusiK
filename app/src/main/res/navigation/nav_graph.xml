@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/allSongFragment">
+
+    <fragment
+        android:id="@+id/allSongFragment"
+        android:name="com.xtremedevx.musik.ui.AllSongFragment"
+        android:label="All Songs"
+        tools:layout="@layout/fragment_all_song">
+        <action
+            android:id="@+id/action_allSongFragment_to_playerFragment"
+            app:destination="@id/playerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playerFragment"
+        android:name="com.xtremedevx.musik.ui.PlayerFragment"
+        android:label="Now Playing"
+        tools:layout="@layout/fragment_player">
+        <action
+            android:id="@+id/action_playerFragment_to_allSongFragment"
+            app:destination="@id/allSongFragment"
+            app:popUpTo="@id/allSongFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
